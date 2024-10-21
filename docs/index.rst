@@ -73,8 +73,12 @@ Once your fixtures have been written, load them by executing this command:
 
 This command looks for all services tagged with ``doctrine.fixture.orm``. If you're
 using the `default service configuration`_, any class that implements ``ORMFixtureInterface``
-(for example, those extending from ``Fixture``) will automatically be registered
-with this tag.
+(for example, those extending from ``Doctrine\Bundle\FixturesBundle\Fixture``) will automatically 
+be registered with this tag.  
+Please note the Bundle uses `a compiler pass to detect the services
+<https://github.com/doctrine/DoctrineFixturesBundle/blob/HEAD/src/DependencyInjection/CompilerPass/FixturesCompilerPass.php>`_, and in so, 
+they should be instanciable (declaring their constructor as `private` would prevent 
+them from being detected, for instance).
 
 To see other options for the command, run:
 
