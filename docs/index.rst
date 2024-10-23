@@ -77,7 +77,7 @@ using the `default service configuration`_, any class that implements ``ORMFixtu
 be registered with this tag.  
 Please note the Bundle uses `a compiler pass to detect the services
 <https://github.com/doctrine/DoctrineFixturesBundle/blob/HEAD/src/DependencyInjection/CompilerPass/FixturesCompilerPass.php>`_, and in so, 
-they should be instanciable (declaring their constructor as `private` would prevent 
+they should be instanciable (declaring their constructor as ``private`` would prevent 
 them from being detected, for instance).
 
 To see other options for the command, run:
